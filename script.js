@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
     const dotsContainer = document.querySelector('.carousel-dots');
-    const romanticMessage = document.querySelector('.romantic-message');
-    const readMoreBtn = document.querySelector('.read-more-btn');
     let currentSlide = 0;
     let interval;
 
@@ -47,18 +45,5 @@ document.addEventListener('DOMContentLoaded', () => {
     carouselContainer.addEventListener('mouseleave', () => {
         resetInterval();
         slides[currentSlide].style.animationPlayState = 'running';
-    });
-
-    // Manipular clique no botão "Ler mais"
-    readMoreBtn.addEventListener('click', () => {
-        if (romanticMessage.classList.contains('hidden')) {
-            romanticMessage.classList.remove('hidden');
-            romanticMessage.classList.add('full');
-            readMoreBtn.textContent = 'Ler menos';
-        } else {
-            romanticMessage.classList.remove('full');
-            romanticMessage.classList.add('hidden');
-            readMoreBtn.textContent = 'Ler mais';
-        }
     });
 });
